@@ -17,10 +17,13 @@
 
 // Songs
 var mySong = {
-	"title":"24K Magic",
-	"artist":"Bruno Mars",
+	"title":"Lola",
+	"artist":"The Kinks",
 	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-	"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
+	"image-url":"https://i.ytimg.com/vi/LemG0cvc4oU/maxresdefault.jpg",
+	songLength : "4:01 minutes",
+	
+	
 }
 
 var myPlayList = [
@@ -55,11 +58,19 @@ $( document ).ready(function() {
 
 });
 
-function displayList(){
+function displayList(index){
+	var songName = myPlayList[index].title;
+	var songMaker = myPlaylist[index].artist;
+	var songPicture = myPlayList[index].image-url;
+	var songLink = myPlayList[index].mp3-url;
+	
+	var songTitleDisplay = "<h1>"  + songName + " </h1>" ;
+	var songArtistDisplay = "<p> a song by" + songMaker + " </p>";
+	var songCoverDisplay = "<img src=\"" +songPicture + "\"/>";
+	var songAccess = "<a href=\"" + songLink + "\"/>" + "Play Song" + "</a>";
+	var finalSongDisplay = "<div id ="displayOfSong">
 
-
-  
-}
+};
 
 function clearList(){
   
