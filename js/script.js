@@ -22,8 +22,6 @@ var mySong = {
 	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
 	"image-url":"https://i.ytimg.com/vi/LemG0cvc4oU/maxresdefault.jpg",
 	songLength : "4:01 minutes",
-	
-	
 }
 
 var myPlayList = [
@@ -49,37 +47,90 @@ var myPlayList = [
 ]
 
 
+function displayMySong(){
+	
+	$('#mySongDisplay').append('<h1>' + mySong.title +'</h1>');
+    $('#mySongDisplay').append('<p>'+"A song by" + mySong.artist +'</p>');
+    $('#mySongDisplay').append("<a href=\' + mySong[i].mp3-url +'/>");
+    $('#mySongDisplay').append("<img src\' +  mySong[i].image-url +'/>");
+    $('#mySongDisplay').append('<p>' + mySong[i].songLength +"MinutesLong"+'<p>');
+    
+    console.log(mySong);
+	
+      /*  $('#mySongDisplay').append('<h1>' + mySong[i].title +'</h1>');
+        $('#mySongDisplay').append('<p>'+"A song by" + mySong[i].artist +'</p>');
+         $('#mySongDisplay').append("<a href=\' + mySong[i].mp3-url +'/>");
+          $('#mySongDisplay').append("<img src\' +  mySong[i].image-url +'/>");
+          $('#mySongDisplay').append('<p>' + mySong[i].songLength +"MinutesLong"+'<p>');*/
+}
+
+//displayMySong();
+
+
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
   
-
+  console.log("hello");
+displayMySong();
 
 
 });
 
-function displayList(index){
+
+function addSong(index){
 	var songName = myPlayList[index].title;
-	var songMaker = myPlaylist[index].artist;
-	var songPicture = myPlayList[index].image-url;
-	var songLink = myPlayList[index].mp3-url;
+	var songMaker = myPlayList[index].artist;
+	var songPicture = myPlayList[index]["image-url"];
+	var songLink = myPlayList[index]["mp3-url"];
 	
 	var songTitleDisplay = "<h1>"  + songName + " </h1>" ;
 	var songArtistDisplay = "<p> a song by" + songMaker + " </p>";
 	var songCoverDisplay = "<img src=\"" +songPicture + "\"/>";
 	var songAccess = "<a href=\"" + songLink + "\"/>" + "Play Song" + "</a>";
-	var finalSongDisplay = "<div id ="displayOfSong">
+	var finalSongDisplay = "<div id='displayDiv'></div>";
 
-};
-
-function clearList(){
-  
-  
-  
+	for(var i = 0; i < myPlayList.length; i++) {
+	    $("#playList").append("<h1>"+myPlayList[i]+"<h1>");
+	    $('#playlistDisplay').append(songTitleDisplay);
+	    $('#playlistDisplay').append(songArtistDisplay);
+	    $('#playlistDisplay').append(songCoverDisplay);
+	    $('#playlistDisplay').append(songAccess);
 }
 
-function addSong(){
+function clearList(){
+	
+}
+
+/*$("#songAddingButton").click(function addSong(index){
+	var songName = $("#songNameInput").val();
+	var songMaker = $("#songArtistInput").val();
+	var songPicture = $("#songImageInput").val();
+	var songLink = $("#songLinkInput").val();
+	
+	var songNameDisplay = "<h1>"  + songName + " </h1>" ;
+	var songMakerDisplay = "<p> a song by" + songMaker + " </p>";
+	var songPictureDisplay = "<img src=\"" +songPicture + "\"/>";
+	var songAccessNew = "<a href=\"" + songLink + "\"/>" + "Play Song" + "</a>";
+	var newSongDisplay = "<div id='displayDiv'></div>";
+	newSongObject[*/
+		
+		
+
+	
+/*for(var i = 0; i < myPlayList.length; i++) {
+	    $('#playlistDisplay').append(songNameDisplay);
+	    $('#playlistDisplay').append(songMakerDisplay);
+	    $('#playlistDisplay').append(songPictureDisplay);
+	    $('#playlistDisplay').append(newSongAccess);
+}
+});
+  */
+  
+
+
+
  
   
   
-}
+

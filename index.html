@@ -20,17 +20,30 @@
   <body>
     <div class="container text-center">
       <h1> My Playlist </h1>
-      <input>
-      <input>
-      <input>
-      <input>
-      <button> Add Song </button>
+      <div class="form-group">
+        <lable for="Tittle">Song Name</lable>
+        <input type="text" class="form-control" id="songNameInput">
+      </div>
+      <div class="form-group">
+      <label for="Artist">Artist</label>
+      <input id="songArtistInput">
+      </div>
+      <div class="form-group">
+      <label for="AlbumCover">Image Link</label>
+      <input id="songImageInput">
+      </div>
+      <div>
+        <label for="songLink">Song Link</label>
+      <input id="songLinkInput">
+      </div>
+      <button id="songAddingButton"> Add Song </button>
       <div class="songs">
+        <div id="playListDisplay"></div>
+      </div> 
+      <div  id="mySongDisplay"></div>
+      <div class="alert alert-info" id="addPopUp" role="alert">
         
-        
-        
-      </div>  
-      
+      </div>
     </div>
   </body>
 
